@@ -1,1 +1,9 @@
-enum chess_piece {pawn, bishop, knight, rook, king, queen};
+enum chess_piece {empty = 0, pawn = 1, bishop = 2, knight = 3, rook = 4, queen = 5, king = 6};
+enum chess_team {none = 0, black = 1, white = 2};
+
+struct square {
+	chess_piece piece;
+	chess_team team;
+};
+
+void print_board ();
