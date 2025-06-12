@@ -5,8 +5,8 @@
 
 std::array<std::array<square, 8>, 8> board;
 
-char piece_sprites[7] = {']', 'p', 'b', 'k', 'r', 'q', 'K'};
-char team_names[3] = {'[', 'B', 'W'};
+char piece_sprites[7] = {' ', 'P', 'B', 'K', 'R', 'Q', '^'};
+char team_names[3] = {' ', 'B', 'W'};
 
 int main (int argc, char* argv[]) {
 
@@ -269,8 +269,8 @@ std::vector<square> get_RowCol_moves(pos src, square src_square, std::vector<squ
 void print_board () {
 	for (int column = 7; column >= 0; column--) {
 		for (int row = 0; row < 8; row++) {
-			std::cout << team_names[board[column][row].team] << piece_sprites[board[column][row].piece];
+			std::cout << '['<< team_names[board[column][row].team] << piece_sprites[board[column][row].piece] << ']' << "  ";
 		}
-		std::cout << "\n";
+		std::cout << "\n\n";
 	}
 }
